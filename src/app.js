@@ -14,6 +14,7 @@ const partialsPath = path.join(__dirname, '../templates/partials')
 
 
 const app = express();
+const port = process.env.PORT || 3000
 
 //setup handlers engine and views location
 app.set('views', viewsPath) //serve a express per cercare le views in un altra cartella, commentando questa riga non troverebbe la cartella views che cerca di default, perche per prova è stata rinominata templates
@@ -108,8 +109,8 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
 
 
