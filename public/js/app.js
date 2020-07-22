@@ -5,6 +5,10 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.getElementById('message-1')
 const messageTwo = document.getElementById('message-2')
+const message3 = document.getElementById('message-3')
+
+
+
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -19,6 +23,7 @@ weatherForm.addEventListener('submit', (e) => {
             } else {
                 messageOne.textContent = data.location
                 messageTwo.textContent = data.forecast
+                message3.textContent = "Latitude: " + data.latitude + " Longitude: " + data.longitude
             }
         })
     })
